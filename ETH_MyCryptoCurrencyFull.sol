@@ -255,6 +255,6 @@ contract MyAdvancedToken is owned, TokenERC20
         address myAddress = this;
         require(myAddress.balance >= amount * sellPrice); // Check if the contract has enough ether to buy 
         _transfer(msg.sender, this, amount);              // Makes the trasnfers
-        msg.sender.transfer(amount * sellPrice); // Sends ether to the seller. It's important to do this last to avoid recursion attacks
+        msg.sender.transfer(amount * sellPrice);          // Sends ether to the seller. It's important to do this last to avoid recursion attacks
     }
 }
